@@ -1,0 +1,222 @@
+[
+  {
+    "q": "The skeletal system, including bone, cartilage, and connective tissue, primarily develops from which one of the following embryonic germ layers?",
+    "options": [
+      "Ectoderm",
+      "Endoderm",
+      "Mesoderm",
+      "Neural crest cells"
+    ],
+    "answer": "Mesoderm",
+    "explanation": "The skeletal system develops from **mesenchyme**, which is **Mesodermal in origin**. The mesoderm gives rise to mesenchyme, a gelatinous tissue that then differentiates into chondroblasts (cartilage-forming cells), osteoblasts (bone-forming cells), and fibroblasts (connective tissue-forming cells). Ectoderm forms the epidermis and nervous system, and Endoderm forms the mucosal lining of the digestive and respiratory tracts."
+  },
+  {
+    "q": "Which specific derivative of the paraxial mesoderm is responsible for forming the vertebral column and ribs?",
+    "options": [
+      "Dermatome",
+      "Myotome",
+      "Sclerotome",
+      "Somatopleuric mesoderm"
+    ],
+    "answer": "Sclerotome",
+    "explanation": "Paraxial mesoderm segments into blocks called **Somites**. These somites differentiate into three parts: the **sclerotome** (ventromedial part), which forms the vertebral column and ribs; the **dermatome**, which forms the dermis of the skin; and the **myotome**, which forms the skeletal muscle."
+  },
+  {
+    "q": "A 6-month-old infant presents with craniosynostosis, a congenital anomaly characterized by the premature closure of cranial sutures. The bones of the cranial vault involved in this defect are formed by which type of ossification?",
+    "options": [
+      "Endochondral ossification",
+      "Intramembranous ossification",
+      "Synovial joint formation",
+      "Chondrification"
+    ],
+    "answer": "Intramembranous ossification",
+    "explanation": "The flat bones of the **cranial vault** that make up the membranous neurocranium are formed directly from mesenchymal tissue without a cartilaginous intermediate. This process is called **Intramembranous Ossification** (or membranous type ossification). Craniosynostosis is listed as a clinical correlation/anomaly."
+  },
+  {
+    "q": "Which of the following bones is an exception, developing primarily via intramembranous ossification rather than endochondral ossification, despite being part of the appendicular skeleton?",
+    "options": [
+      "Femur",
+      "Humerus",
+      "Clavicle",
+      "Vertebra"
+    ],
+    "answer": "Clavicle",
+    "explanation": "While most bones of the limbs and girdles are formed by **Endochondral Ossification** (intra-cartilaginous type), the **Clavicle** (collarbone) is specifically noted as an exception, being a **membrane bone** formed by intramembranous ossification."
+  },
+  {
+    "q": "The definitive vertebra is formed through a process of resegmentation, which ensures that the muscles connecting to the vertebra can move them. This resegmentation involves the condensation and fusion of:",
+    "options": [
+      "The cranial half of one sclerotome and the cranial half of the subjacent sclerotome.",
+      "The caudal half of one sclerotome and the caudal half of the subjacent sclerotome.",
+      "The caudal half of one sclerotome and the cranial half of the subjacent sclerotome.",
+      "The dermatome and the myotome of the same segment."
+    ],
+    "answer": "The caudal half of one sclerotome and the cranial half of the subjacent sclerotome.",
+    "explanation": "A definitive vertebra is formed by the **condensation of the caudal half of one sclerotome** and its subsequent **fusion with the cranial half of the subjacent sclerotome**. This resegmentation is crucial for allowing the muscles, which are derived from the myotome, to span the intervertebral joints and thus permit movement."
+  },
+  {
+    "q": "The nucleus pulposus, the gelatinous center of the intervertebral disc in adults, is a remnant of which primary embryonic structure?",
+    "options": [
+      "Neural crest cells",
+      "Neural tube",
+      "Notochord",
+      "Dermatome"
+    ],
+    "answer": "Notochord",
+    "explanation": "As vertebral development progresses, the **notochord** degenerates and disappears. Between the vertebrae, the notochord expands to form the gelatinous center of the intervertebral disc, which is called the **nucleus pulposus**. The surrounding circularly arranged fibers, the anulus fibrosus, are formed from the surrounding mesenchymal cells."
+  },
+  {
+    "q": "Limb buds first become visible as outpocketings from the ventrolateral body wall during which week of embryonic development?",
+    "options": [
+      "3rd week",
+      "4th week",
+      "Beginning of the 5th week",
+      "6th week"
+    ],
+    "answer": "Beginning of the 5th week",
+    "explanation": "The limb buds become visible as outpocketings from the ventrolateral body wall of the embryo in the **beginning of the 5th week**. The terminal portion of the limb buds flattens to form hand and foot plates in the 6th week."
+  },
+  {
+    "q": "During the 7th week, the upper and lower limbs rotate in opposite directions. The upper limb rotates 90° **laterally**. What is the key result of this specific rotation?",
+    "options": [
+      "The big toe comes to lie on the medial side.",
+      "The extensor muscles come to lie on the anterior surface.",
+      "The thumbs come to lie laterally and the extensor muscles lie posteriorly.",
+      "The extensor muscles and thumbs both come to lie medially."
+    ],
+    "answer": "The thumbs come to lie laterally and the extensor muscles lie posteriorly.",
+    "explanation": "The **upper limb rotates 90° laterally**. This rotation causes the extensor muscles to lie on the posterior surface of the upper limb and the **thumbs to come to lie laterally**. The lower limb rotates 90° medially, which causes the extensor muscles to be anterior and the big toe to be medial."
+  },
+  {
+    "q": "A physician examining a 5-week embryo notes that the mesenchymal core of the developing limb bud, which will form the limb bones, is derived from:",
+    "options": [
+      "The sclerotome of the somite.",
+      "The dermatome of the somite.",
+      "The myotome of the somite.",
+      "The parietal layer of the lateral plate mesoderm."
+    ],
+    "answer": "The parietal layer of the lateral plate mesoderm.",
+    "explanation": "The mesenchymal core of the limb buds, which gives rise to the bones and connective tissue, is derived from the **parietal layer of the lateral plate mesoderm**. In contrast, the muscles of the limbs are derived from the myotomes of the somites that migrate into the limb buds."
+  },
+  {
+    "q": "In the development of a synovial joint, the mesenchyme between the developing bone ends differentiates into three layers. Which one of these layers ultimately becomes the synovial membrane?",
+    "options": [
+      "The two outer layers, forming the perichondrium.",
+      "The middle layer, which becomes loose and forms a cavity.",
+      "The mesenchyme outside the three layers, forming the joint capsule.",
+      "The cartilage model of the articulating bone ends."
+    ],
+    "answer": "The middle layer, which becomes loose and forms a cavity.",
+    "explanation": "At the site of a future synovial joint, the intervening mesenchyme forms three layers. The two outer layers form the capsule and ligaments (from surrounding mesenchyme) and are continuous with the perichondrium. The **middle layer becomes loose and a cavity is formed in it**; this cavity then becomes lined by a mesothelium that forms the **synovial membrane**."
+  },
+  {
+    "q": "A clinical case involves a congenital limb anomaly where the hands or feet are attached close to the trunk due to absence or short intermediate segments of the limb. This condition is known as:",
+    "options": [
+      "Polydactyly",
+      "Amelia",
+      "Syndactyly",
+      "Phocomelia"
+    ],
+    "answer": "Phocomelia",
+    "explanation": "**Phocomelia** is a congenital limb anomaly characterized by the hands/feet being attached close to the trunk, often due to a failure in the development of the proximal parts of the limbs. Amelia is the complete absence of a limb, and Polydactyly is the presence of extra digits."
+  },
+  {
+    "q": "Which of the following describes the first step in Endochondral Ossification (Intra-cartilaginous type)?",
+    "options": [
+      "Mesenchymal tissue directly converts into bone.",
+      "A fibrous membrane (perichondrium) is formed.",
+      "A primary ossification center appears in the diaphysis.",
+      "The mesenchymal tissue first forms a hyaline cartilage model of the bone."
+    ],
+    "answer": "The mesenchymal tissue first forms a hyaline cartilage model of the bone.",
+    "explanation": "Endochondral ossification (or intra-cartilaginous type) is the process where mesenchymal tissue **first gives rise to a hyaline cartilage model** of the bone, and subsequently, osteoblasts convert that model into bone. This process is typical for long bones and vertebrae. Option A describes Membranous Ossification. Option C is a subsequent step in endochondral ossification."
+  },
+  {
+    "q": "The Neurocranium, which forms a protective covering around the brain, is embryologically derived from:",
+    "options": [
+      "Occipital somites (for the cranial vault)",
+      "Occipital somites (for the base of the skull)",
+      "Neural crest cells (for the face)",
+      "Lateral plate mesoderm (for the base of the skull)"
+    ],
+    "answer": "Occipital somites (for the base of the skull)",
+    "explanation": "The skull is divided into the Neurocranium and Viscerocranium. The **Neurocranium** (protective covering around the brain) is derived from the **occipital somites**. Specifically, the membranous neurocranium (cranial vault flat bones) uses intramembranous ossification, while the cartilaginous neurocranium (base of skull irregular bones) uses intracartilaginous ossification."
+  },
+  {
+    "q": "Most primary centers of ossification appear before birth in long bones. The part of a long bone that is ossified from the primary center is the:",
+    "options": [
+      "Epiphyseal plate",
+      "Epiphysis",
+      "Metaphysis",
+      "Diaphysis"
+    ],
+    "answer": "Diaphysis",
+    "explanation": "In intracartilaginous (endochondral) ossification of long bones, the primary ossification center appears in the **diaphysis** (shaft) of the model. The part of the long bone ossified from the primary center is the **Diaphysis**, while the **Epiphysis** is ossified from the secondary center, which usually appears after birth."
+  },
+  {
+    "q": "A congenital spinal defect, **Spina Bifida**, results from the failure of which vertebral element to properly fuse during development?",
+    "options": [
+      "The vertebral body",
+      "The vertebral arch",
+      "The transverse processes",
+      "The intervertebral disc"
+    ],
+    "answer": "The vertebral arch",
+    "explanation": "**Spina Bifida** is listed as an anomaly of the vertebra. It is the result of incomplete closure of the neural tube and the overlying vertebral arches (neural arch) due to failure of the sclerotome cells to migrate correctly and surround the neural tube posteriorly. This leaves the spinal cord and/or its meninges exposed."
+  },
+  {
+    "q": "The skeletal muscles of the limb buds, which are formed by myoblasts, are derived from which part of the somite?",
+    "options": [
+      "Sclerotome",
+      "Dermatome",
+      "Myotome (migrating into the limb bud)",
+      "Splanchnic mesoderm"
+    ],
+    "answer": "Myotome (migrating into the limb bud)",
+    "explanation": "The mesenchyme of the limb buds gives rise to bones and connective tissue. The **muscles of the limbs** are derived from the **myotomes of somites** which migrate into the limbs. The sclerotome forms the bone, and the dermatome forms the dermis."
+  },
+  {
+    "q": "A primary cartilaginous joint (synchondrosis) is typically found between which two structures, as seen in the developing long bone?",
+    "options": [
+      "Adjacent vertebrae (forming a symphysis)",
+      "Flat bones of the skull (forming a suture)",
+      "The diaphysis and epiphysis of a long bone",
+      "Two bones connected by a fibrous tissue (forming a syndesmosis)"
+    ],
+    "answer": "The diaphysis and epiphysis of a long bone",
+    "explanation": "A cartilaginous joint (synchondrosis or primary cartilaginous joint) connects bones with cartilage. This is seen, **typically, at the joints between the diaphyses and epiphyses of long bones**. In a synchondrosis, the cartilage connecting the bones is later ossified, with the result that the two bones become continuous."
+  },
+  {
+    "q": "A congenital deformity where the foot is inverted and medially rotated, often occurring with an incidence of about 1 in 1000 births, is known as:",
+    "options": [
+      "Amelia",
+      "Polydactyly",
+      "Syndactyly",
+      "Clubfoot (Talipes Equinovarus)"
+    ],
+    "answer": "Clubfoot (Talipes Equinovarus)",
+    "explanation": "**Clubfoot (Talipes Equinovarus)** is noted as a common anomaly (~1/1000 births) where the foot is characteristically **inverted and medially rotated**. The other options are also limb anomalies: Amelia (complete absence of limb), Polydactyly (extra digits), and Syndactyly (fusion of digits)."
+  },
+  {
+    "q": "The Sternum (breastbone) is embryologically derived from:",
+    "options": [
+      "Ventral extensions of the sclerotome.",
+      "The two sternal bars derived from mesoderm in the ventral body wall.",
+      "Neural crest cells.",
+      "The lateral plate mesoderm of the limb buds."
+    ],
+    "answer": "The two sternal bars derived from mesoderm in the ventral body wall.",
+    "explanation": "The vertebral column and ribs develop from the sclerotome. However, the **sternum is derived from the two sternal bars on either side of the midline**, which originate from **mesoderm in the ventral body wall**. The ribs develop from the ventral extensions of the sclerotomic mesenchyme."
+  },
+  {
+    "q": "A baby is diagnosed with a form of **Congenital Scoliosis** due to a vertebral defect. What is the likely cause of this condition, based on embryological defects?",
+    "options": [
+      "Premature closure of the cranial sutures (Craniosynostosis).",
+      "Failure of the notochord to degenerate fully, causing a Sacrococcygeal teratoma.",
+      "The presence of a Hemivertebra or parts of a vertebra being absent.",
+      "Failure of the two sternal bars to fuse, causing a Funnel Chest."
+    ],
+    "answer": "The presence of a Hemivertebra or parts of a vertebra being absent.",
+    "explanation": "**Congenital Scoliosis** is listed as an anomaly of the Vertebra. It is often caused by defective formation of the vertebral bodies, which can result in a **Hemivertebra** (a half-vertebra) or complete absence of a vertebra/parts of a vertebra. This leads to an asymmetrical spinal column and subsequent lateral curvature (scoliosis). Craniosynostosis is a skull anomaly, and Sacrococcygeal teratoma and Funnel Chest are separate anomalies."
+  }
+]

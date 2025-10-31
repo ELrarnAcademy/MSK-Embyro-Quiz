@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EasyLearn • Quiz (No-Timer Edition)</title>
+<style>
+  :root{ --brand:#0b5ea8; --ink:#1f2937; --muted:#6b7280; --band:#f3f4f6; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:#f7f9fb; color:var(--ink); }
+  .wrap{ max-width:840px; margin:0 auto; padding:16px; }
+  .card{ background:#fff; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.06); }
+  .header{ text-align:center; padding:8px 0 16px; }
+  .brand{ color:#2f6feb; font-weight:800; font-size:22px; }
+  .hero{ background:linear-gradient(90deg,#1e3a8a,#1d4ed8,#2563eb); color:#fff; padding:28px 18px; margin-top:8px; }
+  .hero h1{ margin:0; font-size:28px; }
+  .hero p{ margin:6px 0 0; opacity:.9; }
+  .status{ display:flex; gap:12px; align-items:center; justify-content:space-between; padding:12px 16px; margin:16px 0; }
+  .hint{ color:#6b7280; font-size:14px; }
+  .btn{ display:inline-block; border:none; border-radius:999px; padding:10px 16px; font-weight:700; cursor:pointer; }
+  .btn-primary{ background:#2563eb; color:#fff; }
+  .btn-primary:disabled{ opacity:.6; cursor:not-allowed; }
+  .btn-ghost{ background:#e5e7eb; color:#111827; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .kpi{ padding:12px 16px; display:flex; align-items:center; justify-content:space-between; }
+  .stem{ padding:18px; }
+  .stem h2{ margin:0 0 12px; font-size:20px; }
+  .options{ padding:0 18px 18px; }
+  .option{ display:block; width:100%; text-align:left; padding:12px 14px; margin-bottom:10px; border-radius:12px; border:1px solid #e5e7eb; background:#fff; font-size:16px; cursor:pointer; }
+  .option:disabled{ opacity:.8; cursor:not-allowed; }
+  .option.correct{ background:#dcfce7; border-color:#16a34a; font-weight:700; }
+  .option.wrong{ background:#fee2e2; border-color:#ef4444; font-weight:700; }
+  .feedback{ margin:0 18px 18px; padding:12px; border-radius:12px; background:#eef2ff; border:1px solid #c7d2fe; color:#1e40af; font-size:14px; }
+  .controls{ display:flex; gap:12px; padding:0 18px 18px; }
+  .footer{ text-align:center; font-size:12px; color:var(--muted); padding:18px; }
+  .logo{ width:96px; height:96px; object-fit:contain; display:block; margin:0 auto 6px; border-radius:999px; }
+  .error{ max-width:840px; margin:12px auto; color:#991b1b; background:#fee2e2; border:1px solid #fecaca; padding:12px 14px; border-radius:12px; font-size:14px; }
+  @media (max-width:600px){ .grid{ grid-template-columns:1fr; } .hero h1{ font-size:22px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <img id="logo" src="" alt="logo" class="logo" onerror="this.style.display='none'">
+    <div id="brand" class="brand">Learn Smart. Achieve More.</div>
+  </div>
+
+  <div class="hero card">
+    <h1 id="uni">University / Institution Name</h1>
+    <p id="title">Quiz Title</p>
+  </div>
+
+  <div id="nofetch" class="error" style="display:none;">
+    Could not load <code>config.json</code> and/or <code>questions.json</code> from the same folder. 
+    Ensure all three files are together: <code>index.html, config.json, questions.json</code> (and optional <code>assets/logo.png</code>).
+  </div>
+
+  <div class="status card">
+    <div><div style="font-weight:600;">Time limit:</div><div class="hint">No time limit (timer removed)</div></div>
+    <button id="start" class="btn btn-primary" disabled>Loading…</button>
+  </div>
+
+  <div class="grid">
+    <div class="card kpi"><span style="color:#6b7280;font-weight:600;">Question</span><span><b id="qidx">—</b>/<b id="qtotal2">—</b></span></div>
+    <div class="card kpi"><span style="color:#6b7280;font-weight:600;">Score</span><span><b id="score">0</b>/<b id="stotal">—</b></span></div>
+  </div>
+
+  <div id="stage" class="card" style="margin-top:12px;">
+    <div class="stem"><h2>Press “Start Quiz” to begin</h2><div class="hint">Loads <code>config.json</code> & <code>questions.json</code> from this same folder.</div></div>
+    <div class="options" id="opts"></div>
+    <div class="feedback" id="fb" style="display:none;"></div>
+    <div class="controls">
+      <button id="prev" class="btn btn-ghost" disabled>← Previous</button>
+      <button id="next" class="btn btn-primary" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div class="footer">© <span id="year"></span> EasyLearn • For educational use</div>
+</div>
+
+<script>
+// Simple helpers
+function shuffle(arr){ var a=arr.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+
+var elLogo = document.getElementById('logo');
+var elBrand = document.getElementById('brand');
+var elUni = document.getElementById('uni');
+var elTitle = document.getElementById('title');
+var elStart = document.getElementById('start');
+var elQIdx = document.getElementById('qidx');
+var elQTot2 = document.getElementById('qtotal2');
+var elScore = document.getElementById('score');
+var elSTot = document.getElementById('stotal');
+var elOpts = document.getElementById('opts');
+var elFb = document.getElementById('fb');
+var elPrev = document.getElementById('prev');
+var elNext = document.getElementById('next');
+var elErr = document.getElementById('nofetch');
+
+var st = { started:false, idx:0, score:0, ans:[], questions:[], cfg:null };
+
+function applyConfig(cfg){
+  st.cfg = cfg||{};
+  elBrand.textContent = st.cfg.brandText || 'EASYLEARN';
+  elUni.textContent = st.cfg.universityName || 'University / Institution Name';
+  elTitle.textContent = st.cfg.testTitle || 'Quiz Title';
+  var logo = st.cfg.logoSrc || 'assets/logo.png';
+  elLogo.src = logo;
+}
+
+function setQuestions(items){
+  var qs = Array.isArray(items)?items:[];
+  if(st.cfg && st.cfg.shuffleQuestions) qs = shuffle(qs);
+  if(st.cfg && st.cfg.shuffleOptions) qs = qs.map(function(q){ return { q:q.q, options:shuffle(q.options), answer:q.answer, explanation:q.explanation||'' }; });
+  st.questions = qs; st.ans = new Array(qs.length).fill(null);
+  elQTot2.textContent = qs.length; elSTot.textContent = qs.length;
+}
+
+function render(){
+  var q = st.questions[st.idx];
+  document.querySelector('.stem h2').textContent = 'Q'+(st.idx+1)+': ' + q.q;
+  elOpts.innerHTML = '';
+  var i, btn;
+  var disabled = st.ans[st.idx]!==null;
+  for(i=0;i<q.options.length;i++){
+    btn = document.createElement('button');
+    btn.className = 'option';
+    btn.textContent = String.fromCharCode(65+i)+'. '+q.options[i];
+    (function(i,btn){
+      btn.onclick = function(){
+        if(st.ans[st.idx]!==null) return;
+        st.ans[st.idx]=i;
+        if(q.options[i]===q.answer){ btn.classList.add('correct'); st.score++; }
+        else {
+          btn.classList.add('wrong');
+          var ci = q.options.indexOf(q.answer);
+          if(ci>-1 && elOpts.children[ci]) elOpts.children[ci].classList.add('correct');
+        }
+        elScore.textContent = st.score;
+        elFb.style.display='block';
+        elFb.textContent = q.explanation||'';
+        elNext.disabled=false;
+        for(var k=0;k<elOpts.children.length;k++){ elOpts.children[k].disabled=true; }
+      };
+    })(i,btn);
+    if(disabled) btn.disabled=true;
+    elOpts.appendChild(btn);
+  }
+  if(disabled){
+    var sel = st.ans[st.idx];
+    if(sel!==null){
+      if(q.options[sel]===q.answer) elOpts.children[sel].classList.add('correct');
+      else{
+        elOpts.children[sel].classList.add('wrong');
+        var ci=q.options.indexOf(q.answer);
+        if(ci>-1) elOpts.children[ci].classList.add('correct');
+      }
+    }
+    elFb.style.display='block'; elFb.textContent=q.explanation||'';
+  } else { elFb.style.display='none'; elFb.textContent=''; }
+  elQIdx.textContent = (st.idx+1);
+  elPrev.disabled = st.idx===0;
+  elNext.disabled = st.ans[st.idx]===null;
+  elNext.textContent = (st.idx===st.questions.length-1)?'Finish Quiz':'Next →';
+}
+
+function finish(){
+  alert('Score: '+st.score+' / '+st.questions.length);
+  location.reload();
+}
+
+elStart.onclick = function(){ if(st.started) return; st.started=true; render(); this.disabled=true; };
+elPrev.onclick = function(){ if(st.idx>0){ st.idx--; render(); } };
+elNext.onclick = function(){ if(st.idx<st.questions.length-1){ st.idx++; render(); } else { finish(); } };
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Load external JSON (same folder). If fails, show error.
+Promise.all([
+  fetch('config.json?'+Date.now(), {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('config '+r.status); return r.json(); }),
+  fetch('questions.json?'+Date.now(), {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('questions '+r.status); return r.json(); })
+]).then(function(all){
+  var cfg = all[0], qs = all[1];
+  applyConfig(cfg); setQuestions(qs);
+  if(st.questions.length>0){ elStart.textContent='Start Quiz'; elStart.disabled=false; }
+  else { elErr.style.display='block'; elErr.textContent = 'Loaded files but found 0 questions. Check questions.json format.'; }
+}).catch(function(err){
+  elErr.style.display='block';
+  elErr.innerHTML = 'Could not fetch files. Place <code>index.html</code>, <code>config.json</code>, <code>questions.json</code> together. Error: '+err;
+});
+</script>
+
+</body>
+</html>
